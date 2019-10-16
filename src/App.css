@@ -4,6 +4,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  font-family: 'Fjalla One', sans-serif;
 
 }
 
@@ -13,9 +14,10 @@
 .header {
   width: 100%;
   height: 10%;
-  background: #5D5BB3;
+  background: rgb(203, 203, 214);
   display: flex;
   flex-direction: row;
+  box-shadow: 1px 2px 13px rgb(0, 0, 0, 1);
 }
 
 .header-left {
@@ -26,7 +28,7 @@
   justify-content: flex-start;
   align-items: center;
   font-size: 40px;
-  color: white;
+  color: black;
 }
 .header-right {
   padding-right: 10%;
@@ -35,6 +37,29 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+.nav-button {
+  height: 100%;
+  width: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-button:hover {
+  background: black;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+Link {
+  text-decoration: none;
+  width: auto;
+  height: inherit;
+}
+
+Link:hover {
+  color: white;
 }
 
 
@@ -109,6 +134,7 @@ button {
   height: 40px;
   border-radius: 5px;
   outline: none;
+  box-shadow: 5px 5px 9px rgb(0, 0, 0, .6);
 }
 button:hover {
   cursor: pointer;
