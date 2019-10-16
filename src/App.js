@@ -1,6 +1,8 @@
 import React from 'react';
 import './reset.css';
 import './App.css';
+import { Switch, Route, Link } from 'react-router-dom';
+import Halloween from './components/halloween/halloween';
 
 class App extends React.Component {
 
@@ -38,24 +40,31 @@ class App extends React.Component {
       <div className="App">
         <header className='header'>
           <div className="header-left">
-            Welcome!
+            WELCOME
           </div>
           <div className="header-right">
-            <button>Halloween</button>
-            <button>Thanksgiving</button>
-            <button>Christmas</button>
+            <Link to='/halloween' style={{textDecoration: 'none', color: 'black'}}>
+              <div className="nav-button">Halloween</div>
+            </Link>
+            <div className="nav-button">Thanksgiving</div>
+            <div className="nav-button">Christmas</div>
           </div>
         </header>
         <div className="body">
-          { this.state.loading ? 
-            this.handleLoading()
-            :
-            <div className="home">
-              <button onClick={this.handleStartLoad}>Click me to load</button>
-              
-              
-            </div>
-          }
+            <Switch>
+              <Route exact path='/'>
+                { this.state.loading ? 
+                  this.handleLoading()
+                  :
+                  <div className="home">
+                    <button onClick={this.handleStartLoad}>Click me to load</button>
+                    
+                    
+                  </div>
+                }
+              </Route>
+              <Route path='/halloween' component={Halloween}/>
+            </Switch>
         </div>
       </div>
     );
