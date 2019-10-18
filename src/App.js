@@ -40,10 +40,10 @@ class App extends React.Component {
       <div className="App">
         <header className='header'>
           <div className="header-left">
-            WELCOME
+            <Link to='/' style={{textDecoration: 'none', color: 'black'}}>WELCOME</Link>
           </div>
           <div className="header-right">
-            <Link to='/halloween' style={{textDecoration: 'none', color: 'black'}}>
+            <Link to='/halloween' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
               <div className="nav-button">Halloween</div>
             </Link>
             <div className="nav-button">Thanksgiving</div>
