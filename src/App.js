@@ -63,7 +63,9 @@ class App extends React.Component {
                   </div>
                 }
               </Route>
-              <Route path='/halloween' component={Halloween}/>
+              <Route path='/halloween'>
+                <Halloween timeTillDate="10 26 2019, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />
+              </Route>
             </Switch>
         </div>
       </div>
