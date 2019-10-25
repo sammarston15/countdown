@@ -3,20 +3,20 @@ import moment from 'moment';
 
 class Halloween extends React.Component {
     state = {
-        days: undefined,
-        hours: undefined,
-        minutes: undefined,
-        seconds: undefined
+        days: '',
+        hours: '',
+        minutes: '',
+        seconds: ''
     };
 
     componentDidMount() {
         this.interval = setInterval(() => {
-            const { timeTillDate, timeFormat } = this.props;
-            const then = moment(timeTillDate, timeFormat);
+            // const { timeTillDate, timeFormat } = this.props;
+            const then = moment("October 31, 2019 00:00:00 -0700", "LLL, h:mm ZZ");
             const now = moment();
             const countdown = moment(then - now);
             const days = countdown.format('D');
-            const hours = countdown.format('HH');
+            const hours = countdown.format('H');
             const minutes = countdown.format('mm');
             const seconds = countdown.format('ss');
 
