@@ -1,13 +1,13 @@
 import React from 'react';
-import moment from 'moment';
-import TimeAgo from 'react-timeago';
-
-
-
+import './halloween.css';
 
 class Halloween extends React.Component {
 	state = {
-        deadline: 'October, 31, 2019'
+        deadline: 'October, 31, 2019', 
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
 	}
 	
 	componentWillMount() {
@@ -40,8 +40,9 @@ class Halloween extends React.Component {
 	render() {
 		
 		return (
-			<div>
-                <div>Days until HALLOWEEN</div>
+			<div className='halloween'>
+                <iframe src="https://giphy.com/embed/9PgseUGIG7YfmNcuU3" width="1000px" height="1000px" frameBorder="0" classname="giphy-embed" allowFullScreen style={{zIndex: '1'}}></iframe>
+                <div className='title'>Days until HALLOWEEN</div>
 				<div className="clock-days">{this.loading0(this.state.days)} Days</div>
                 <div className="clock-hours">{this.loading0(this.state.hours)} Hours</div>
                 <div className="clock-minutes">{this.loading0(this.state.minutes)} Hours</div>
