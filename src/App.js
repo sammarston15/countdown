@@ -64,6 +64,16 @@ class App extends React.Component {
     const {firstname, lastname, email} = this.state
     console.log(this.state)
 
+    const csvMap = this.state.csvData.map((data, i) => {
+      return (
+        console.log(data),
+        <tr style={{height: 'auto', border: '1px solid black'}} key={i}>
+          <td style={{padding: '20px', border: '1px solid black', background: 'white'}}>{data[data.length - 3]}</td>
+          <td style={{padding: '20px', border: '1px solid black', background: 'white'}}>{data[data.length - 2]}</td>
+          <td style={{padding: '20px', border: '1px solid black', background: 'white'}}>{data[data.length - 1]}</td>
+        </tr>
+      )
+    })
     return (
       <div className="App">
         <header className='header'>
@@ -94,6 +104,14 @@ class App extends React.Component {
                     <CSVLink data={this.state.csvData} target='_blank'>
                       <button>download me as .csv file</button>
                     </CSVLink>
+                    
+                      <table>
+                        <tbody style={{margin: '0 30px'}}>
+                          {csvMap}
+                        </tbody>
+                      </table>
+                      
+                    
                   </div>
                 }
               </Route>
