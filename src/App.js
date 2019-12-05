@@ -3,6 +3,9 @@ import './reset.css';
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import Halloween from './components/halloween/halloween';
+import Thanksgiving from './components/thanksgiving/thanksgiving';
+import Christmas from './components/Christmas/Christmas';
+import Movies from './components/movies/movies';
 import {CSVLink} from 'react-csv';
 
 class App extends React.Component {
@@ -84,8 +87,15 @@ class App extends React.Component {
             <Link to='/halloween' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
               <div className="nav-button">Halloween</div>
             </Link>
-            <div className="nav-button">Thanksgiving</div>
-            <div className="nav-button">Christmas</div>
+            <Link to='/thanksgiving' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
+              <div className="nav-button">Thanksgiving</div>
+            </Link>
+            <Link to='/christmas' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
+              <div className="nav-button">Christmas</div>
+            </Link>
+            <Link to='/movies' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
+              <div className="nav-button">Movies</div>
+            </Link>
           </div>
         </header>
         <div className="body">
@@ -95,7 +105,11 @@ class App extends React.Component {
                   this.handleLoading()
                   :
                   <div className="home">
-                    <div style={{fontSize: '50px', color: 'whitesmoke', maxWidth: '400px', height: 'auto', textAlign: 'center'}}>Hello all, enter info to put in the csv file</div>
+                    <div style={{fontSize: '50px', color: 'whitesmoke', maxWidth: '600px', height: 'auto', textAlign: 'center'}}>
+                      Take a look at the tabs up top to see how much time it takes to get to that holiday. <br/>
+                      <br/>
+                      Hello all, enter info to put in the csv file
+                    </div>
                     <button onClick={this.handleStartLoad}>Click me to load</button>
                     <input name="firstname" value={firstname} placeholder='firstname' onChange={this.handleChange} />
                     <input name="lastname" value={lastname} placeholder='lastname' onChange={this.handleChange} />
@@ -115,9 +129,10 @@ class App extends React.Component {
                   </div>
                 }
               </Route>
-              <Route path='/halloween'>
-                <Halloween timeTillDate="10 31 2019, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
-              </Route>
+              <Route path='/halloween' component={Halloween} />
+              <Route path='/thanksgiving' component={Thanksgiving} />
+              <Route path='/christmas' component={Christmas} />
+              <Route path='/movies' component={Movies} />
             </Switch>
         </div>
       </div>

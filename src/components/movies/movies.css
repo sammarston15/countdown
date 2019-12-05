@@ -1,0 +1,23 @@
+.movies-body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar-container {
+    width: 100%;
+    height: 75px;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-container input {
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}

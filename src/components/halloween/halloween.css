@@ -1,25 +1,27 @@
 .halloween {
     width: 100%;
-    height: auto ;
+    height: 100% ;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    
-}
-.giphy-embed {
-    z-index: 1;
-    height: 1000px;
-    width: 1000px;
+    background: url('https://media.giphy.com/media/9PgseUGIG7YfmNcuU3/giphy.gif') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 
 .title {
+    padding-top: 30px;
     width: 100%;
     height: 20%;
     font-size: 100px;
     display: flex;
     justify-content: center;
+    color: rgb(0, 0, 0);
+    text-shadow: -7px -5px 3px seashell;
 }
 .clock-days {
     width: 100%;
@@ -27,6 +29,7 @@
     font-size: 100px;
     display: flex;
     justify-content: center;
+    color: rgb(255, 154, 0);
 }
 .clock-hours {
     width: 100%;
@@ -34,6 +37,7 @@
     font-size: 100px;
     display: flex;
     justify-content: center;
+    color: rgb(247, 95, 28);
 }
 .clock-minutes {
     width: 100%;
@@ -41,6 +45,7 @@
     font-size: 100px;
     display: flex;
     justify-content: center;
+    color: rgb(255, 154, 0);
 }
 .clock-seconds {
     width: 100%;
@@ -48,4 +53,5 @@
     font-size: 100px;
     display: flex;
     justify-content: center;
+    color: rgb(247, 95, 28);
 }
