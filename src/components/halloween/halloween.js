@@ -3,7 +3,7 @@ import './halloween.css';
 
 class Halloween extends React.Component {
 	state = {
-        deadline: 'October, 31, 2019', 
+        deadline: 'October, 31, 2020', 
         days: 0,
         hours: 0,
         minutes: 0,
@@ -41,12 +41,12 @@ class Halloween extends React.Component {
 		
 		return (
 			<div className='halloween'>
-                <iframe src="https://giphy.com/embed/9PgseUGIG7YfmNcuU3" width="1000px" height="1000px" frameBorder="0" classname="giphy-embed" allowFullScreen style={{zIndex: '1'}}></iframe>
-                <div className='title'>Days until HALLOWEEN</div>
-				<div className="clock-days">{this.loading0(this.state.days)} Days</div>
-                <div className="clock-hours">{this.loading0(this.state.hours)} Hours</div>
-                <div className="clock-minutes">{this.loading0(this.state.minutes)} Hours</div>
-                <div className="clock-seconds">{this.loading0(this.state.seconds)} Hours</div>
+                {/* <iframe src="https://giphy.com/embed/9PgseUGIG7YfmNcuU3" width="1000px" height="1000px" frameBorder="0" classname="giphy-embed" allowFullScreen style={{zIndex: '1'}}></iframe> */}
+                <div className='title'>Days until HALLOWEEN 2020</div>
+				<div className="clock-days">{this.loading0(this.state.days)} days</div>
+                <div className="clock-hours">{this.loading0(this.state.hours)} hours</div>
+                <div className="clock-minutes">{this.loading0(this.state.minutes)} minutes</div>
+                <div className="clock-seconds">{this.loading0(this.state.seconds)} seconds</div>
 			</div>
 		);
 	}
