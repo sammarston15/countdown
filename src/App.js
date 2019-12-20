@@ -73,7 +73,7 @@ class App extends React.Component {
         <tr style={{height: 'auto', border: '1px solid black'}} key={i}>
           <td style={{padding: '20px', border: '1px solid black', background: 'white'}}>{data[data.length - 3]}</td>
           <td style={{padding: '20px', border: '1px solid black', background: 'white'}}>{data[data.length - 2]}</td>
-          <td style={{padding: '20px', border: '1px solid black', background: 'white'}}>{data[data.length - 1]}</td>
+          <td style={{padding: '20px', border: '1px solid black', background: 'white', width: '200px'}}>{data[data.length - 1]}</td>
         </tr>
       )
     })
@@ -119,7 +119,7 @@ class App extends React.Component {
                       <button>download me as .csv file</button>
                     </CSVLink>
                     
-                      <table>
+                      <table className='csv-report'>
                         <tbody style={{margin: '0 30px'}}>
                           {csvMap}
                         </tbody>

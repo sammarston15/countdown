@@ -21,3 +21,16 @@
     outline: none;
     border: none;
 }
+.search-bar-container button {
+    background: turquoise;
+    font-weight: bold;
+}
+
+.results-container {
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    
+}
