@@ -5,7 +5,8 @@ import axios from 'axios';
 class Movies extends Component {
 
     state = {
-        movies: []
+        movies: [],
+        movieImage: ''
     }
 
     componentDidMount() {
@@ -28,13 +29,12 @@ class Movies extends Component {
         console.log('before call')
         
         let moviesMap = this.state.movies.map((result, i) => {
-            
+            let movieImageUrl = 'https://image.tmdb.org/t/p/w500' + result.poster_path;
             console.log(`during map: ${result.title} & ${i}`)
             return (
                 <div className='movie-card'>
-                    <div>
+                        <img src={movieImageUrl} height='350px' width='250px' />    
                         {result.title}
-                    </div>
                 </div>
             )
         })
