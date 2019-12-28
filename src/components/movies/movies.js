@@ -16,7 +16,8 @@ class Movies extends Component {
     getMovies = () => {
         axios.get('https://api.themoviedb.org/3/discover/movie?api_key=e3b88ea03f5f916f87b2657d0a7a6ebf&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
             .then(response => {
-                this.setState({movies: response.data})
+                this.setState({movies: response.data.results})
+                console.log('movies')
                 console.log(this.state.movies)
                 
             })
@@ -24,16 +25,19 @@ class Movies extends Component {
 
 
     render() {
-
-        // let moviesMap = this.state.movies.map((movie, i) => {
+        console.log('before call')
+        
+        let moviesMap = this.state.movies.map((result, i) => {
             
-        //     console.log(movie[i])
-        //     return (
-        //         <div className="movie-card">
-        //             Title: {movie[i]}
-        //         </div>
-        //     )
-        // })
+            console.log(`during map: ${result.title} & ${i}`)
+            return (
+                <div className='movie-card'>
+                    <div>
+                        {result.title}
+                    </div>
+                </div>
+            )
+        })
         // console.log(this.state.movies)
         return (
             <div className="movies-body">
@@ -42,8 +46,7 @@ class Movies extends Component {
                     <button>SEARCH</button>
                 </div>
                 <div className="results-container">
-                    {/* {this.state.moviesMap} */}
-                    hello there
+                    {moviesMap}
                 </div>
             </div>
         );
