@@ -93,7 +93,7 @@ class App extends React.Component {
             <Link to='/christmas' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
               <div className="nav-button">Christmas</div>
             </Link>
-            <Link to='/movies' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
+            <Link to='/movies/discover/page=1' style={{textDecoration: 'none', color: 'black', height: '100%', width: 'auto'}}>
               <div className="nav-button">Movies</div>
             </Link>
           </div>
@@ -132,7 +132,7 @@ class App extends React.Component {
               <Route path='/halloween' component={Halloween} />
               <Route path='/thanksgiving' component={Thanksgiving} />
               <Route path='/christmas' component={Christmas} />
-              <Route path='/movies' component={Movies} />
+              <Route path='/movies/discover/page=1' component={Movies} />
             </Switch>
         </div>
       </div>

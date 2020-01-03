@@ -6,19 +6,21 @@ class Movies extends Component {
 
     state = {
         movies: [],
-        movieImage: ''
+        movieImage: '',
+        pageNumber: 1
     }
 
     componentDidMount() {
-        let loadMovies = this.getMovies();
+        let loadMovies = this.getMovies(this.state.pageNumber);
+        console.log(this.props)
     }
 
 
-    getMovies = () => {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=e3b88ea03f5f916f87b2657d0a7a6ebf&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
+    getMovies = (num) => {
+        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=e3b88ea03f5f916f87b2657d0a7a6ebf&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${num}`)
             .then(response => {
                 this.setState({movies: response.data.results})
-                console.log('movies')
+                console.log(response.data)
                 console.log(this.state.movies)
                 
             })
@@ -32,13 +34,22 @@ class Movies extends Component {
             })
     }
 
+    pageUp = (e) => {
+        e.preventDefault();
+        console.log('hit')
+        this.setState({pageNumber: this.state.pageNumber + 1})
+        this.getMovies(this.state.pageNumber);
+        
+        
+    }
+
 
     render() {
-        console.log('before call')
+        console.log('render')
+
         
         let moviesMap = this.state.movies.map((result, i) => {
             let movieImageUrl = 'https://image.tmdb.org/t/p/w500' + result.poster_path;
-            console.log(`during map: ${result.title} & ${i}`)
             return (
                 <div className='movie-card'>
                         <img src={movieImageUrl} height='350px' width='250px' />    
@@ -53,7 +64,14 @@ class Movies extends Component {
                     <input type="text" placeholder="Search"/>
                     <button>SEARCH</button>
                 </div>
+                <div>
+                    showing page {this.state.pageNumber} of 500
+                    <button onClick={this.pageDown}>previous</button>
+                    <button onClick={this.pageUp}>next</button>
+                </div>
                 <div className="results-container">
+                    
+                    
                     {moviesMap}
                 </div>
             </div>
